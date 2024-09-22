@@ -19,9 +19,9 @@ def run_background_remover(input_img_file):
         image = Image.open(input_img_path)  
         output = remove(image)
         output.save(output_img_path, "PNG")
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2) #subdivido en 2 columnas para hacer comparativa de antes y despues
         with col1:
-            st.header("Antes")
+            st.header("Antes") 
             st.image(input_img_path, caption="Imagen original")
             with open(input_img_path, "rb") as img_file:
                 st.download_button(
@@ -32,7 +32,7 @@ def run_background_remover(input_img_file):
                 )
         with col2:
             st.header("Después")
-            st.image(output_img_path, caption="Imagen con fondo removido")  # Mostrar imagen procesada
+            st.image(output_img_path, caption="Imagen con fondo removido")  # Muestra la imagen procesada
             with open(output_img_path, "rb") as img_file:  # Abrir archivo procesado para la descarga
                 st.download_button(
                     label="Descargar imagen procesada",
